@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Australian Education Counsel — Visa & Study Abroad Consultants</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Australian Education Counsel helps students secure admissions, scholarships, and visas for Australia, UK, USA, Canada, and Europe. Free assessment and expert guidance.">
+  <link rel="icon" href="images/logo-mark.svg" type="image/svg+xml">
+  <!-- Optional: system font stack for speed -->
+  <style>
+    /* Inline critical CSS for topbar & header to avoid FOUC */
+    :root{
+      --blue-700:#1e3a8a;  /* deep blue */
+      --blue-600:#1d4ed8;  /* primary blue */
+      --red-600:#dc2626;   /* accent red */
+      --red-700:#b91c1c;
+      --white:#ffffff;
+      --ink:#0f172a;       /* dark text (blue-gray) */
+      --ink-70:#334155;
+      --ink-50:#64748b;
+      --bg:#f8fafc;
+      --border:#e2e8f0;
+      --shadow:0 10px 25px rgba(2,6,23,0.08);
+      --radius:14px;
+      --radius-sm:10px;
+      --radius-lg:18px;
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, "Noto Sans", "Helvetica Neue", sans-serif; color:var(--ink); background:var(--bg); line-height:1.6}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+    a{color:inherit; text-decoration:none}
+    .topbar{background:var(--blue-700); color:var(--white); font-size:14px}
+    .topbar .wrap{display:flex; gap:14px; align-items:center; justify-content:space-between; padding:8px 0}
+    .topbar .left, .topbar .right{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .topbar a{opacity:.9}
+    header.site-header{position:sticky; top:0; z-index:50; background:var(--white); border-bottom:1px solid var(--border); transition:box-shadow .2s ease}
+    header.site-header.scrolled{box-shadow:var(--shadow)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand img{height:38px; width:auto}
+    .brand .name{font-weight:800; letter-spacing:.2px; color:var(--blue-700)}
+    nav ul{display:flex; gap:22px; list-style:none; margin:0; padding:0}
+    nav a{font-weight:600}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; font-weight:700; border-radius:999px; padding:12px 18px; border:2px solid transparent; transition:transform .08s ease, background .15s ease, color .15s ease}
+    .btn:active{transform:translateY(1px)}
+    .btn.primary{background:var(--blue-600); color:var(--white)}
+    .btn.primary:hover{background:#1a43bd}
+    .btn.outline{border-color:var(--red-600); color:var(--red-600); background:transparent}
+    .btn.outline:hover{background:var(--red-600); color:var(--white)}
+    .hamburger{display:none; background:transparent; border:none; width:44px; height:44px}
+    .hamburger span, .hamburger span:before, .hamburger span:after{content:""; display:block; height:2px; background:var(--ink); margin:8px 0; transition:.2s}
+    /* hero critical */
+    .hero{position:relative; background:linear-gradient(140deg, rgba(30,58,138,.95), rgba(29,78,216,.85)), url('images/hero-students.jpg') center/cover no-repeat; color:var(--white)}
+    .hero .inner{padding:84px 0 110px}
+    .hero h1{font-size:clamp(28px, 4vw, 48px); line-height:1.15; margin:0 0 16px; font-weight:900}
+    .hero p{font-size:clamp(16px, 2vw, 20px); opacity:.92; max-width:800px}
+    .hero .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px}
+    @media (max-width: 1024px){
+      nav ul{display:none}
+      .hamburger{display:block}
+      nav.open ul{
+        display:flex; position:absolute; left:0; top:100%; width:100%; flex-direction:column; background:var(--white); padding:14px 20px 20px; border-bottom:1px solid var(--border)
+      }
+      nav.open ul a{padding:8px 0}
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container wrap">
+      <div class="left">
+        <a href="tel:+92XXXXXXXXXX">📞 +92-XXX-XXXXXXX</a>
+        <a href="mailto:info@aec.example">✉️ info@aec.example</a>
+      </div>
+      <div class="right">
+        <span>Mon–Sat 10:00–18:00</span>
+        <a href="#contact" class="btn outline" aria-label="Book Free Assessment">Free Assessment</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="site-header" id="home">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Australian Education Counsel home">
+        <img src="images/logo-mark.svg" alt="AEC logo">
+        <span class="name">Australian Education Counsel</span>
+      </a>
+      <nav id="siteNav">
+        <button class="hamburger" id="navToggle" aria-label="Open menu"><span></span></button>
+        <ul role="menubar" aria-label="Primary">
+          <li role="none"><a role="menuitem" href="#about">About</a></li>
+          <li role="none"><a role="menuitem" href="#services">Services</a></li>
+          <li role="none"><a role="menuitem" href="#countries">Countries</a></li>
+          <li role="none"><a role="menuitem" href="#process">Process</a></li>
+          <li role="none"><a role="menuitem" href="#testimonials">Testimonials</a></li>
+          <li role="none"><a role="menuitem" href="#faq">FAQ</a></li>
+          <li role="none"><a role="menuitem" href="#contact" class="btn primary">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="container inner">
+      <h1 id="heroTitle">Study Abroad & Visa Consultancy — Trusted Guidance, Real Results.</h1>
+      <p>From university selection to visa success, AEC supports your journey to <strong>Australia</strong>, <strong>UK</strong>, <strong>USA</strong>, <strong>Canada</strong>, and <strong>Europe</strong>. Get a free, honest assessment today.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Book Free Assessment</a>
+        <a class="btn outline" href="#services">Explore Services</a>
+      </div>
+      <div class="hero-stats" aria-label="Company stats">
+        <div class="stats-wrap">
+          <div class="stat"><strong>10+</strong><span>Years Experience</span></div>
+          <div class="stat"><strong>3,000+</strong><span>Successful Visas</span></div>
+          <div class="stat"><strong>150+</strong><span>Partner Institutions</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container grid two">
+      <div>
+        <h2 class="h2">Why AEC?</h2>
+        <p>Australian Education Counsel (AEC) is a student-first consultancy. We pair transparent advice with meticulous application handling—so you can focus on your goals, not paperwork.</p>
+        <ul class="checklist">
+          <li>Certified counsellors & verified admissions</li>
+          <li>Scholarship guidance & SOP review</li>
+          <li>Visa file preparation with compliance focus</li>
+          <li>Pre-departure briefings & accommodation help</li>
+        </ul>
+        <div class="pills">
+          <span class="pill pill-red">Free Assessment</span>
+          <span class="pill pill-blue">Fast Turnaround</span>
+          <span class="pill pill-red">High Acceptance</span>
+        </div>
+      </div>
+      <div class="media">
+        <img src="images/about-team.jpg" alt="AEC counsellors assisting students">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section alt">
+    <div class="container">
+      <h2 class="h2 center">Our Core Services</h2>
+      <p class="intro center">Full-stack support from shortlisting to visa stamping.</p>
+      <div class="cards grid three">
+        <article class="card">
+          <img src="images/icon-counselling.svg" alt="" class="icon">
+          <h3>Student Counselling</h3>
+          <p>Objective, country- and course-matched guidance tailored to your profile.</p>
+        </article>
+        <article class="card">
+          <img src="images/icon-admissions.svg" alt="" class="icon">
+          <h3>Admissions & SOP</h3>
+          <p>University shortlisting, application filing, SOP editing, and document curation.</p>
+        </article>
+        <article class="card">
+          <img src="images/icon-visa.svg" alt="" class="icon">
+          <h3>Visa File & Interview</h3>
+          <p>Genuine Temporary Entrant (GTE), funds, forms, and interview preparation.</p>
+        </article>
+        <article class="card">
+          <img src="images/icon-scholarship.svg" alt="" class="icon">
+          <h3>Scholarship Guidance</h3>
+          <p>Identify merit- and need-based awards to reduce your tuition burden.</p>
+        </article>
+        <article class="card">
+          <img src="images/icon-tests.svg" alt="" class="icon">
+          <h3>IELTS/PTE Readiness</h3>
+          <p>Prep pathways and score strategy aligned with your target institutions.</p>
+        </article>
+        <article class="card">
+          <img src="images/icon-predeparture.svg" alt="" class="icon">
+          <h3>Pre-Departure</h3>
+          <p>Accommodation, flights, insurance, and arrival briefings for a smooth start.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Countries -->
+  <section id="countries" class="section">
+    <div class="container">
+      <h2 class="h2 center">Study Destinations</h2>
+      <div class="cards grid five flags">
+        <a class="flag" href="#" aria-label="Study in Australia">
+          <img src="images/flag-australia.svg" alt="">
+          <h3>Australia</h3>
+        </a>
+        <a class="flag" href="#" aria-label="Study in United Kingdom">
+          <img src="images/flag-uk.svg" alt="">
+          <h3>UK</h3>
+        </a>
+        <a class="flag" href="#" aria-label="Study in United States">
+          <img src="images/flag-usa.svg" alt="">
+          <h3>USA</h3>
+        </a>
+        <a class="flag" href="#" aria-label="Study in Canada">
+          <img src="images/flag-canada.svg" alt="">
+          <h3>Canada</h3>
+        </a>
+        <a class="flag" href="#" aria-label="Study in Europe">
+          <img src="images/flag-eu.svg" alt="">
+          <h3>Europe</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="section alt">
+    <div class="container">
+      <h2 class="h2 center">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <img src="images/step-1.svg" alt=""><span>1. Free Profile Assessment</span>
+        </div>
+        <div class="step">
+          <img src="images/step-2.svg" alt=""><span>2. University Shortlist</span>
+        </div>
+        <div class="step">
+          <img src="images/step-3.svg" alt=""><span>3. Application Filing</span>
+        </div>
+        <div class="step">
+          <img src="images/step-4.svg" alt=""><span>4. Offer & GTE</span>
+        </div>
+        <div class="step">
+          <img src="images/step-5.svg" alt=""><span>5. Visa Submission</span>
+        </div>
+        <div class="step">
+          <img src="images/step-6.svg" alt=""><span>6. Pre-Departure</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="h2 center">Student Success Stories</h2>
+      <div class="slider" aria-live="polite">
+        <figure class="slide current">
+          <img src="images/student-1.jpg" alt="Student with Australian flag">
+          <blockquote>“AEC streamlined everything—from SOP to visa. I’m now at UNSW!”</blockquote>
+          <figcaption>— Ayesha, Masters in Data Science (AU)</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="images/student-2.jpg" alt="Student holding UK acceptance">
+          <blockquote>“Transparent guidance and quick responses. Got my CAS in 3 weeks.”</blockquote>
+          <figcaption>— Hamza, BSc Computer Science (UK)</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="images/student-3.jpg" alt="Student on US campus">
+          <blockquote>“They fixed my documents and the interview prep was spot on.”</blockquote>
+          <figcaption>— Fatima, MS Engineering (USA)</figcaption>
+        </figure>
+        <button class="nav prev" aria-label="Previous testimonial">&#10094;</button>
+        <button class="nav next" aria-label="Next testimonial">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready for your free assessment?</h2>
+      <p>Speak with a certified counsellor today and unlock your global degree.</p>
+      <a href="#contact" class="btn primary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section alt">
+    <div class="container">
+      <h2 class="h2 center">Frequently Asked Questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Which country is best for my profile?</summary>
+          <p>We evaluate your academics, budget, test scores, and goals, then recommend matches across Australia, UK, USA, Canada, and Europe.</p>
+        </details>
+        <details>
+          <summary>Can you help with scholarships?</summary>
+          <p>Yes. We shortlist university and government scholarships and refine your SOP to increase odds.</p>
+        </details>
+        <details>
+          <summary>What is GTE (Australia)?</summary>
+          <p>Genuine Temporary Entrant is a statement and evidence to show you intend to study in Australia temporarily. We help you compile it correctly.</p>
+        </details>
+        <details>
+          <summary>How long does visa processing take?</summary>
+          <p>Timelines vary by country and intake. We’ll set expectations after your assessment and application submission.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container grid two">
+      <div>
+        <h2 class="h2">Book a Free Assessment</h2>
+        <p>Fill the form and our team will reach out within one business day.</p>
+        <form id="contactForm" novalidate>
+          <div class="grid two form-grid">
+            <label>Full Name
+              <input type="text" name="name" required placeholder="Your full name">
+            </label>
+            <label>Email
+              <input type="email" name="email" required placeholder="you@example.com">
+            </label>
+            <label>Phone (WhatsApp)
+              <input type="tel" name="phone" required placeholder="+92xxxxxxxxxx" pattern="^[0-9+ ]{7,}$">
+            </label>
+            <label>Destination
+              <select name="destination" required>
+                <option value="">Select</option>
+                <option>Australia</option>
+                <option>UK</option>
+                <option>USA</option>
+                <option>Canada</option>
+                <option>Europe</option>
+              </select>
+            </label>
+          </div>
+          <label>Message
+            <textarea name="message" rows="5" placeholder="Tell us about your background and target course."></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Submit</button>
+            <span id="formStatus" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+      <div class="contact-card">
+        <img src="images/office.jpg" alt="AEC office reception">
+        <div class="card-body">
+          <h3>Our Offices</h3>
+          <p><strong>Lahore</strong><br>123 Main Boulevard, Gulberg</p>
+          <p><strong>Karachi</strong><br>45 Clifton Block, DHA</p>
+          <p><strong>Islamabad</strong><br>Blue Area, Jinnah Ave</p>
+          <a class="btn outline" href="https://wa.me/00000000000" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container grid three">
+      <div>
+        <a class="brand" href="#home">
+          <img src="images/logo-mark.svg" alt="AEC logo">
+          <span class="name">Australian Education Counsel</span>
+        </a>
+        <p class="foot-note">Your trusted partner for admissions, scholarships, and visas.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><img src="images/icon-facebook.svg" alt=""></a>
+          <a href="#" aria-label="Instagram"><img src="images/icon-instagram.svg" alt=""></a>
+          <a href="#" aria-label="LinkedIn"><img src="images/icon-linkedin.svg" alt=""></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="list">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#countries">Countries</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <form id="newsletterForm" class="newsletter" novalidate>
+          <input type="email" name="email" placeholder="Email address" required>
+          <button class="btn primary" type="submit">Subscribe</button>
+        </form>
+        <small id="newsStatus" role="status" aria-live="polite"></small>
+      </div>
+    </div>
+    <div class="copy">
+      <div class="container">
+        © <span id="year"></span> Australian Education Counsel. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating actions -->
+  <a class="whatsapp-float" href="https://wa.me/00000000000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <img src="images/icon-whatsapp.svg" alt="">
+  </a>
+  <button id="toTop" class="to-top" aria-label="Scroll to top">↑</button>
+
+  <!-- JSON-LD Organization Schema (fill real details later) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"EducationalOrganization",
+    "name":"Australian Education Counsel",
+    "url":"https://www.aec.example",
+    "logo":"https://www.aec.example/images/logo-mark.svg",
+    "email":"info@aec.example",
+    "telephone":"+92-XXX-XXXXXXX",
+    "sameAs":["https://facebook.com/yourpage","https://www.linkedin.com/company/yourcompany"],
+    "address":{"@type":"PostalAddress","addressCountry":"PK"}
+  }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
