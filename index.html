@@ -1,821 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Australian Education Counsel — Visa & Study Abroad Consultants</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta name="description" content="Australian Education Counsel helps students secure admissions, scholarships, and visas for Australia, UK, USA, Canada, and Europe. Free assessment and expert guidance.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇦🇺</text></svg>">
+  <link rel="icon" href="images/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* ========== Theme Variables ========== */
-    :root {
-      --blue-800: #001a63;
-      --blue-700: #2b2d78;
-      --blue-600: #153fb3;
-      --blue-500: #3b82f6;
-      --blue-100: #e0e7ff;
-      --red-700: #b91c1c;
-      --red-600: #d72017;
-      --red-500: #ef4444;
-      --red-100: #fee2e2;
-      --white: #ffffff;
-      --ink: #0f172a;
-      --ink-80: #1f2a44;
-      --ink-70: #334155;
-      --ink-50: #64748b;
-      --bg: #f8fafc;
-      --border: #e2e8f0;
-      --radius: 14px;
-      --radius-sm: 10px;
-      --radius-lg: 18px;
-      --shadow: 0 10px 25px rgba(2, 6, 23, 0.08);
-      --shadow-lg: 0 18px 35px rgba(2, 6, 23, 0.12);
-      --maxw: 1200px;
-    }
-
-    /* ========== Base Styles ========== */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Inter", Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    .container {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    h1, h2, h3, h4 {
-      color: var(--ink);
-      margin: 0 0 10px;
-    }
-
-    .h2 {
-      font-size: clamp(22px, 3.2vw, 34px);
-      font-weight: 900;
-      color: var(--blue-800);
-    }
-
-    .center {
-      text-align: center;
-    }
-
-    .intro {
-      max-width: 720px;
-      margin: 6px auto 28px;
-      color: var(--ink-50);
-    }
-
-    .section {
-      padding: 70px 0;
-      background: var(--white);
-    }
-
-    .section.alt {
-      background: linear-gradient(180deg, var(--bg), #fff);
-    }
-
-    .grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    .grid.two {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .grid.three {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid.five {
-      grid-template-columns: repeat(5, 1fr);
-    }
-
-    @media (max-width: 980px) {
-      .grid.two, .grid.three, .grid.five {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ========== Topbar ========== */
-    .topbar {
-      background: var(--blue-700);
-      color: var(--white);
-      font-size: 14px;
-    }
-
-    .topbar .wrap {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8px 0;
-    }
-
-    .topbar .left, .topbar .right {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .topbar a {
-      opacity: .9;
-      transition: opacity 0.2s;
-    }
-
-    .topbar a:hover {
-      opacity: 1;
-    }
-
-    /* ========== Header / Navigation ========== */
-    header.site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      transition: box-shadow .2s ease;
-    }
-
-    header.site-header.scrolled {
-      box-shadow: var(--shadow);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand img {
-      height: 38px;
-      width: auto;
-    }
-
-    .brand .name {
-      font-weight: 800;
-      letter-spacing: .2px;
-      color: var(--blue-700);
-    }
-
-    nav ul {
-      display: flex;
-      gap: 22px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      font-weight: 600;
-      position: relative;
-      padding: 8px 0;
-    }
-
-    nav a:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--red-600);
-      transition: width 0.3s;
-    }
-
-    nav a:hover:after {
-      width: 100%;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-weight: 700;
-      border-radius: 999px;
-      padding: 12px 18px;
-      border: 2px solid transparent;
-      transition: transform .08s ease, background .15s ease, color .15s ease;
-      cursor: pointer;
-    }
-
-    .btn:active {
-      transform: translateY(1px);
-    }
-
-    .btn.primary {
-      background: var(--blue-600);
-      color: var(--white);
-    }
-
-    .btn.primary:hover {
-      background: #1a43bd;
-    }
-
-    .btn.outline {
-      border-color: var(--red-600);
-      color: var(--red-600);
-      background: transparent;
-    }
-
-    .btn.outline:hover {
-      background: var(--red-600);
-      color: var(--white);
-    }
-
-    /* Mobile Navigation */
-    .hamburger {
-      display: none;
-      background: transparent;
-      border: none;
-      width: 44px;
-      height: 44px;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .hamburger span, .hamburger span:before, .hamburger span:after {
-      content: "";
-      display: block;
-      height: 2px;
-      width: 24px;
-      background: var(--ink);
-      margin: 8px 0;
-      transition: .2s;
-      position: absolute;
-      left: 10px;
-    }
-
-    .hamburger span:before {
-      top: -8px;
-    }
-
-    .hamburger span:after {
-      top: 8px;
-    }
-
-    .hamburger.open span {
-      background: transparent;
-    }
-
-    .hamburger.open span:before {
-      transform: rotate(45deg);
-      top: 0;
-    }
-
-    .hamburger.open span:after {
-      transform: rotate(-45deg);
-      top: 0;
-    }
-
-    @media (max-width: 1024px) {
-      nav ul {
-        display: none;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      nav.open ul {
-        display: flex;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        width: 100%;
-        flex-direction: column;
-        background: var(--white);
-        padding: 14px 20px 20px;
-        border-bottom: 1px solid var(--border);
-        box-shadow: var(--shadow);
-      }
-
-      nav.open ul a {
-        padding: 8px 0;
-      }
-    }
-
-    /* ========== Hero Section ========== */
-    .hero {
-      position: relative;
-      background: linear-gradient(140deg, rgba(30, 58, 138, 0.95), rgba(29, 78, 216, 0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-      color: var(--white);
-    }
-
-    .hero .inner {
-      padding: 84px 0 110px;
-    }
-
-    .hero h1 {
-      font-size: clamp(28px, 4vw, 48px);
-      line-height: 1.15;
-      margin: 0 0 16px;
-      font-weight: 900;
-    }
-
-    .hero p {
-      font-size: clamp(16px, 2vw, 20px);
-      opacity: .92;
-      max-width: 800px;
-    }
-
-    .hero .cta {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .hero-stats .stats-wrap {
-      display: flex;
-      gap: 16px;
-      margin-top: 24px;
-      flex-wrap: wrap;
-    }
-
-    .stat {
-      background: rgba(255, 255, 255, .12);
-      border: 1px solid rgba(255, 255, 255, .25);
-      padding: 12px 16px;
-      border-radius: var(--radius);
-      backdrop-filter: blur(5px);
-    }
-
-    .stat strong {
-      font-size: 20px;
-      display: block;
-    }
-
-    .stat span {
-      opacity: .9;
-      font-size: 14px;
-    }
-
-    /* ========== About Section ========== */
-    .checklist {
-      list-style: none;
-      padding: 0;
-      margin: 18px 0;
-    }
-
-    .checklist li {
-      padding-left: 26px;
-      position: relative;
-      margin: 10px 0;
-      color: var(--ink-70);
-    }
-
-    .checklist li:before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--red-600);
-      font-weight: 900;
-    }
-
-    .pills {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .pill {
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-weight: 700;
-      border: 2px solid transparent;
-    }
-
-    .pill-blue {
-      background: var(--blue-100);
-      color: var(--blue-800);
-    }
-
-    .pill-red {
-      background: var(--red-100);
-      color: var(--red-700);
-    }
-
-    .media img {
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      transition: transform 0.3s;
-    }
-
-    .media img:hover {
-      transform: translateY(-5px);
-    }
-
-    /* ========== Services Section ========== */
-    .cards {
-      margin-top: 24px;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-      transition: transform .12s ease, box-shadow .12s ease;
-      height: 100%;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .card .icon {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 10px;
-    }
-
-    /* ========== Countries Section ========== */
-    .flags .flag {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: #fff;
-      box-shadow: var(--shadow);
-      transition: transform .12s ease;
-    }
-
-    .flags .flag:hover {
-      transform: translateY(-2px);
-    }
-
-    .flags .flag img {
-      width: 36px;
-      height: auto;
-    }
-
-    /* ========== Process Section ========== */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 16px;
-      text-align: center;
-    }
-
-    .step img {
-      width: 42px;
-    }
-
-    @media (max-width: 980px) {
-      .steps {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .steps {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ========== Testimonials Section ========== */
-    .slider {
-      position: relative;
-      overflow: hidden;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .slide {
-      display: none;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .slide.current {
-      display: block;
-      animation: fadeIn 0.5s;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .slide img {
-      width: 88px;
-      height: 88px;
-      object-fit: cover;
-      border-radius: 999px;
-      margin: 0 auto 8px;
-    }
-
-    .slide blockquote {
-      font-style: italic;
-      color: var(--ink-80);
-      margin: 10px 0;
-    }
-
-    .slider .nav {
-      position: absolute;
-      top: calc(50% - 22px);
-      border: none;
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      background: var(--blue-600);
-      color: #fff;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    .slider .prev {
-      left: 6px;
-    }
-
-    .slider .next {
-      right: 6px;
-    }
-
-    .slider .nav:hover {
-      background: #1a43bd;
-    }
-
-    /* ========== CTA Banner ========== */
-    .cta-banner {
-      background: linear-gradient(135deg, var(--blue-700), var(--blue-600));
-      color: #fff;
-      text-align: center;
-      padding: 60px 0;
-    }
-
-    .cta-banner p {
-      opacity: .95;
-      margin: 8px 0 16px;
-    }
-
-    /* ========== FAQ Section ========== */
-    .faq details {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 14px 16px;
-      margin: 10px 0;
-      box-shadow: var(--shadow);
-    }
-
-    .faq summary {
-      cursor: pointer;
-      font-weight: 700;
-      color: var(--ink);
-      position: relative;
-      padding-right: 30px;
-    }
-
-    .faq summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq summary:after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 1.2em;
-      transition: transform 0.3s;
-    }
-
-    .faq details[open] summary:after {
-      content: '-';
-      transform: rotate(0deg);
-    }
-
-    .faq p {
-      margin-top: 10px;
-      color: var(--ink-70);
-    }
-
-    /* ========== Contact Section ========== */
-    form label {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      outline: none;
-      transition: border .1s ease, box-shadow .1s ease;
-      background: #fff;
-      color: var(--ink);
-    }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--blue-600);
-      box-shadow: 0 0 0 3px rgba(29, 78, 216, .15);
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    @media (max-width: 640px) {
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .form-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    #formStatus, #newsStatus {
-      font-size: 14px;
-    }
-
-    .contact-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .contact-card .card-body {
-      padding: 18px;
-    }
-
-    .contact-card .btn {
-      margin-top: 8px;
-    }
-
-    /* ========== Footer ========== */
-    .footer {
-      background: #0b1430;
-      color: #d0d5e1;
-    }
-
-    .footer .brand .name {
-      color: #fff;
-    }
-
-    .footer h4 {
-      margin: 0 0 8px;
-      color: #fff;
-    }
-
-    .footer .list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer .list li {
-      margin: 6px 0;
-    }
-
-    .footer .socials {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .footer .socials a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      transition: background 0.3s;
-    }
-
-    .footer .socials a:hover {
-      background: var(--blue-600);
-    }
-
-    .footer .copy {
-      border-top: 1px solid rgba(255, 255, 255, .1);
-      margin-top: 18px;
-      padding: 14px 0;
-      color: #aab1c4;
-      text-align: center;
-    }
-
-    /* ========== Floating Elements ========== */
-    .whatsapp-float {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      width: 56px;
-      height: 56px;
-      border-radius: 999px;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-lg);
-      z-index: 100;
-      transition: transform 0.3s;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-
-    .whatsapp-float img {
-      width: 26px;
-    }
-
-    .to-top {
-      position: fixed;
-      right: 16px;
-      bottom: 84px;
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      background: var(--red-600);
-      color: #fff;
-      border: none;
-      display: none;
-      box-shadow: var(--shadow);
-      cursor: pointer;
-      z-index: 100;
-    }
-
-    .to-top.show {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* ========== Utilities ========== */
-    .nav a:focus-visible {
-      outline: 3px solid var(--red-600);
-      outline-offset: 3px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -837,7 +32,7 @@
   <header class="site-header" id="home">
     <div class="container nav">
       <a class="brand" href="#home" aria-label="Australian Education Counsel home">
-        <img src="images/logo.png" alt="AEC logo">
+        <div class="logo"><img class="logo" src="images/logo.png" alt="AEC logo"></div>
         <span class="name">Australian Education Counsel</span>
       </a>
       <nav id="siteNav">
@@ -858,7 +53,15 @@
   <!-- Hero -->
   <section class="hero" aria-labelledby="heroTitle">
     <div class="container inner">
-      <h1 id="heroTitle">Study Abroad & Visa Consultancy — Trusted Guidance, Real Results.</h1>
+      <h1 id="heroTitle">Study Abroad & Visa Consultancy</h1>
+      
+      <div class="dynamic-text-container">
+        <div class="dynamic-text active">Trusted Guidance, Real Results.</div>
+        <div class="dynamic-text">Your Pathway to Global Education.</div>
+        <div class="dynamic-text">Connecting Students to World-Class Universities.</div>
+        <div class="dynamic-text">Personalized Guidance for Your Academic Journey.</div>
+      </div>
+      
       <p>From university selection to visa success, AEC supports your journey to <strong>Australia</strong>, <strong>UK</strong>, <strong>USA</strong>, <strong>Canada</strong>, and <strong>Europe</strong>. Get a free, honest assessment today.</p>
       <div class="cta">
         <a class="btn primary" href="#contact">Book Free Assessment</a>
@@ -893,11 +96,10 @@
         </div>
         <br><br><br>
         <a href="https://www.icef.com/agency/001bG0000073eT9QAI" target="_blank">
-          <img src="images/ICEF.png" alt="AEC counsellors assisting students" height="200px">
+          <img src="images/ICEF.png" alt="ICEF Certification" height="200px">
         </a>
       </div>
       <div class="media">
-        
         <img src="images/22.jpg" alt="AEC counsellors assisting students" height="500px">
       </div>
     </div>
@@ -910,32 +112,32 @@
       <p class="intro center">Full-stack support from shortlisting to visa stamping.</p>
       <div class="cards grid three">
         <article class="card">
-          <div style="font-size: 48px; color: var(--blue-600); margin-bottom: 10px;">🎓</div>
+          <div class="card-icon">🎓</div>
           <h3>Student Counselling</h3>
           <p>Objective, country- and course-matched guidance tailored to your profile.</p>
         </article>
         <article class="card">
-          <div style="font-size: 48px; color: var(--blue-600); margin-bottom: 10px;">📝</div>
+          <div class="card-icon">📝</div>
           <h3>Admissions & SOP</h3>
           <p>University shortlisting, application filing, SOP editing, and document curation.</p>
         </article>
         <article class="card">
-          <div style="font-size: 48px; color: var(--blue-600); margin-bottom: 10px;">📋</div>
+          <div class="card-icon">📋</div>
           <h3>Visa File & Interview</h3>
           <p>Genuine Temporary Entrant (GTE), funds, forms, and interview preparation.</p>
         </article>
         <article class="card">
-          <div style="font-size: 48px; color: var(--blue-600); margin-bottom: 10px;">💰</div>
+          <div class="card-icon">💰</div>
           <h3>Scholarship Guidance</h3>
           <p>Identify merit- and need-based awards to reduce your tuition burden.</p>
         </article>
         <article class="card">
-          <div style="font-size: 48px; color: var(--blue-600); margin-bottom: 10px;">📚</div>
+          <div class="card-icon">📚</div>
           <h3>IELTS/PTE Readiness</h3>
           <p>Prep pathways and score strategy aligned with your target institutions.</p>
         </article>
         <article class="card">
-          <div style="font-size: 48px; color: var(--blue-600); margin-bottom: 10px;">✈️</div>
+          <div class="card-icon">✈️</div>
           <h3>Pre-Departure</h3>
           <p>Accommodation, flights, insurance, and arrival briefings for a smooth start.</p>
         </article>
@@ -949,23 +151,23 @@
       <h2 class="h2 center">Study Destinations</h2>
       <div class="cards grid five flags">
         <a class="flag" href="#" aria-label="Study in Australia">
-          <div style="font-size: 32px;">🇦🇺</div>
+          <div class="flag-icon">🇦🇺</div>
           <h3>Australia</h3>
         </a>
         <a class="flag" href="#" aria-label="Study in United Kingdom">
-          <div style="font-size: 32px;">🇬🇧</div>
+          <div class="flag-icon">🇬🇧</div>
           <h3>UK</h3>
         </a>
         <a class="flag" href="#" aria-label="Study in United States">
-          <div style="font-size: 32px;">🇺🇸</div>
+          <div class="flag-icon">🇺🇸</div>
           <h3>USA</h3>
         </a>
         <a class="flag" href="#" aria-label="Study in Canada">
-          <div style="font-size: 32px;">🇨🇦</div>
+          <div class="flag-icon">🇨🇦</div>
           <h3>Canada</h3>
         </a>
         <a class="flag" href="#" aria-label="Study in Europe">
-          <div style="font-size: 32px;">🇪🇺</div>
+          <div class="flag-icon">🇪🇺</div>
           <h3>Europe</h3>
         </a>
       </div>
@@ -978,27 +180,27 @@
       <h2 class="h2 center">How It Works</h2>
       <div class="steps">
         <div class="step">
-          <div style="font-size: 32px;">📋</div>
+          <div class="step-icon">📋</div>
           <span>1. Free Profile Assessment</span>
         </div>
         <div class="step">
-          <div style="font-size: 32px;">🎯</div>
+          <div class="step-icon">🎯</div>
           <span>2. University Shortlist</span>
         </div>
         <div class="step">
-          <div style="font-size: 32px;">📨</div>
+          <div class="step-icon">📨</div>
           <span>3. Application Filing</span>
         </div>
         <div class="step">
-          <div style="font-size: 32px;">📄</div>
+          <div class="step-icon">📄</div>
           <span>4. Offer & GTE</span>
         </div>
         <div class="step">
-          <div style="font-size: 32px;">✅</div>
+          <div class="step-icon">✅</div>
           <span>5. Visa Submission</span>
         </div>
         <div class="step">
-          <div style="font-size: 32px;">✈️</div>
+          <div class="step-icon">✈️</div>
           <span>6. Pre-Departure</span>
         </div>
       </div>
@@ -1012,7 +214,7 @@
       <div class="slider" aria-live="polite">
         <figure class="slide current">
           <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" alt="Student with Australian flag">
-          <blockquote>“AEC streamlined everything—from SOP to visa. I’m now at UNSW!”</blockquote>
+          <blockquote>“AEC streamlined everything—from SOP to visa. I'm now at UNSW!”</blockquote>
           <figcaption>— Ayesha, Masters in Data Science (AU)</figcaption>
         </figure>
         <figure class="slide">
@@ -1103,12 +305,12 @@
         </form>
       </div>
       <div class="contact-card">
-        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="AEC office reception">
+        <a href="https://maps.app.goo.gl/SQ4woGc2qL342EuA7" target="_blank"><img src="images/address.png" alt="AEC office reception"></a>
         <div class="card-body">
-          <h3>Our Offices</h3>
-          <p><strong>Lahore</strong><br>123 Main Boulevard, Gulberg</p>
-          <p><strong>Karachi</strong><br>45 Clifton Block, DHA</p>
-          <p><strong>Islamabad</strong><br>Blue Area, Jinnah Ave</p>
+          <h3>Our Office</h3>
+          <a href="https://maps.app.goo.gl/SQ4woGc2qL342EuA7" target="_blank"><strong>Multan</strong><br>Gulgasht Colony
+          276-B Bosan Rd، opp. Telephone Exchange</a>
+          <br><br>
           <a class="btn outline" href="https://wa.me/923028478487" target="_blank" rel="noopener">WhatsApp Us</a>
         </div>
       </div>
@@ -1120,14 +322,15 @@
     <div class="container grid three">
       <div>
         <a class="brand" href="#home">
-                  <img src="images/logo.png" alt="AEC logo">
+          <div class="logo"><img class="logo" src="images/logo.png" alt="AEC logo"></div>
+          
           <span class="name">Australian Education Counsel</span>
         </a>
         <p class="foot-note">Your trusted partner for admissions, scholarships, and visas.</p>
         <div class="socials">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/aec.net.pk/" target="_blank"  aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/aec.net.pk/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://pk.linkedin.com/company/aec-net-pk" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
       <div>
@@ -1158,7 +361,7 @@
 
   <!-- Floating actions -->
   <a class="whatsapp-float" href="https://wa.me/923028478487" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp" style="color: white; font-size: 24px;"></i>
+    <i class="fab fa-whatsapp"></i>
   </a>
   <button id="toTop" class="to-top" aria-label="Scroll to top">↑</button>
 
@@ -1173,8 +376,8 @@
     "email": "info@aec.net.pk",
     "telephone": "+92-302-8478487",
     "sameAs": [
-      "https://facebook.com/yourpage",
-      "https://www.linkedin.com/company/yourcompany"
+      "https://www.facebook.com/aec.net.pk/",
+      "https://pk.linkedin.com/company/aec-net-pk"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -1183,109 +386,6 @@
   }
   </script>
 
-  <script>
-    // Sticky header shadow
-    const header = document.querySelector('.site-header');
-    const toTop = document.getElementById('toTop');
-    const nav = document.getElementById('siteNav');
-    const navToggle = document.getElementById('navToggle');
-
-    function onScroll() {
-      if (window.scrollY > 10) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
-      if (window.scrollY > 400) toTop.classList.add('show');
-      else toTop.classList.remove('show');
-    }
-    window.addEventListener('scroll', onScroll);
-    onScroll();
-
-    // Mobile nav toggle
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        nav.classList.toggle('open');
-        navToggle.classList.toggle('open');
-        navToggle.setAttribute('aria-expanded', nav.classList.contains('open'));
-      });
-      // Close menu when clicking a link
-      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        nav.classList.remove('open');
-        navToggle.classList.remove('open');
-      }));
-    }
-
-    // Smooth scroll (with small offset for sticky header)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e){
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-        
-        const target = document.querySelector(href);
-        if (!target) return;
-        
-        e.preventDefault();
-        const y = target.getBoundingClientRect().top + window.scrollY - 70;
-        window.scrollTo({top: y, behavior: 'smooth'});
-      });
-    });
-
-    // Back to top
-    toTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
-
-    // Testimonials slider (no dependency)
-    const slides = Array.from(document.querySelectorAll('.slide'));
-    let idx = 0;
-    function show(i){
-      slides.forEach(s => s.classList.remove('current'));
-      slides[i].classList.add('current');
-    }
-    function next(){ idx = (idx + 1) % slides.length; show(idx); }
-    function prev(){ idx = (idx - 1 + slides.length) % slides.length; show(idx); }
-    const nextBtn = document.querySelector('.slider .next');
-    const prevBtn = document.querySelector('.slider .prev');
-    if (nextBtn && prevBtn) {
-      nextBtn.addEventListener('click', next);
-      prevBtn.addEventListener('click', prev);
-      setInterval(next, 6000);
-    }
-
-    // Forms: simple UX validation (no backend)
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-    if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!contactForm.checkValidity()){
-          formStatus.textContent = "Please fill all required fields correctly.";
-          formStatus.style.color = '#b91c1c';
-          contactForm.reportValidity();
-          return;
-        }
-        formStatus.textContent = "Thanks! We'll contact you shortly.";
-        formStatus.style.color = '#16a34a';
-        contactForm.reset();
-      });
-    }
-
-    // Newsletter
-    const newsForm = document.getElementById('newsletterForm');
-    const newsStatus = document.getElementById('newsStatus');
-    if (newsForm) {
-      newsForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!newsForm.checkValidity()){
-          newsStatus.textContent = "Enter a valid email.";
-          newsStatus.style.color = '#b91c1c';
-          newsForm.reportValidity();
-          return;
-        }
-        newsStatus.textContent = "Subscribed! 🎉";
-        newsStatus.style.color = '#16a34a';
-        newsForm.reset();
-      });
-    }
-
-    // Current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

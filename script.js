@@ -17,41 +17,67 @@ onScroll();
 if (navToggle) {
   navToggle.addEventListener('click', () => {
     nav.classList.toggle('open');
+    navToggle.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', nav.classList.contains('open'));
   });
   // Close menu when clicking a link
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    navToggle.classList.remove('open');
+  }));
 }
 
 // Smooth scroll (with small offset for sticky header)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e){
-    const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    
+    const target = document.querySelector(href);
     if (!target) return;
+    
     e.preventDefault();
     const y = target.getBoundingClientRect().top + window.scrollY - 70;
-    window.scrollTo({top:y, behavior:'smooth'});
+    window.scrollTo({top: y, behavior: 'smooth'});
   });
 });
 
 // Back to top
-toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+toTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+
+// Text rotation for hero section
+const textElements = document.querySelectorAll('.dynamic-text');
+let currentIndex = 0;
+
+function rotateText() {
+  // Remove active class from current element
+  textElements[currentIndex].classList.remove('active');
+  
+  // Move to next element
+  currentIndex = (currentIndex + 1) % textElements.length;
+  
+  // Add active class to next element
+  textElements[currentIndex].classList.add('active');
+}
+
+// Start rotating text every 3 seconds
+setInterval(rotateText, 3000);
 
 // Testimonials slider (no dependency)
 const slides = Array.from(document.querySelectorAll('.slide'));
-let idx = 0;
-function show(i){
+let slideIndex = 0;
+function showSlide(i){
   slides.forEach(s => s.classList.remove('current'));
   slides[i].classList.add('current');
 }
-function next(){ idx = (idx + 1) % slides.length; show(idx); }
-function prev(){ idx = (idx - 1 + slides.length) % slides.length; show(idx); }
+function nextSlide(){ slideIndex = (slideIndex + 1) % slides.length; showSlide(slideIndex); }
+function prevSlide(){ slideIndex = (slideIndex - 1 + slides.length) % slides.length; showSlide(slideIndex); }
 const nextBtn = document.querySelector('.slider .next');
 const prevBtn = document.querySelector('.slider .prev');
 if (nextBtn && prevBtn) {
-  nextBtn.addEventListener('click', next);
-  prevBtn.addEventListener('click', prev);
-  setInterval(next, 6000);
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+  setInterval(nextSlide, 6000);
 }
 
 // Forms: simple UX validation (no backend)
@@ -66,7 +92,7 @@ if (contactForm) {
       contactForm.reportValidity();
       return;
     }
-    formStatus.textContent = "Thanks! We’ll contact you shortly.";
+    formStatus.textContent = "Thanks! We'll contact you shortly.";
     formStatus.style.color = '#16a34a';
     contactForm.reset();
   });
