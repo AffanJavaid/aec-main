@@ -161,6 +161,35 @@ if (newsForm) {
     newsForm.reset();
   });
 }
+  // Get modal
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.querySelector(".close");
+
+  // Attach click event to all flags
+  document.querySelectorAll(".flag").forEach(flag => {
+    flag.addEventListener("click", function(e) {
+      e.preventDefault(); // stop page jump
+      const imgSrc = this.getAttribute("data-image");
+      if (imgSrc) {
+        modal.style.display = "block";
+        modalImg.src = imgSrc;
+      }
+    });
+  });
+
+  // Close modal
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Close modal if clicked outside image
+  modal.onclick = function(e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+
 
 // Current year
 document.getElementById('year').textContent = new Date().getFullYear();

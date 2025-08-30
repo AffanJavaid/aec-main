@@ -116,8 +116,94 @@ h1, h2, h3, h4 {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.grid.five {
+/* Countries Section */
+#countries {
+  padding: 60px 0;
+}
+
+.cards.grid.five {
+  display: grid;
   grid-template-columns: repeat(5, 1fr);
+  gap: 20px; /* space between cards */
+}
+
+.flag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flag:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.flag-icon, 
+.flag .media2 img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.flag h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Modal Background */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  padding-top: 80px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Modal Image */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  animation: zoomIn 0.3s ease;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #ff4444;
+}
+
+/* Animation */
+@keyframes zoomIn {
+  from {transform: scale(0.7);}
+  to {transform: scale(1);}
 }
 
 @media (max-width: 980px) {
@@ -337,7 +423,7 @@ nav a:hover:after {
 /* ========== Hero Section ========== */
 .hero {
   position: relative;
-  background: linear-gradient(140deg, rgba(119, 140, 198, 0.95), rgba(44, 62, 112, 0.85)), url('images/bg.jpg') center/cover no-repeat;
+  background: linear-gradient(140deg, rgba(119, 140, 198, 0.95), rgba(81, 87, 105, 0.85)), url('images/bg.jpg') center/cover no-repeat;
   color: var(--white);
 }
 
@@ -476,9 +562,21 @@ nav a:hover:after {
   transform: translateY(-5px);
 }
 
+.media2 img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+  width: 50%;
+  height: auto;
+}
+
+.media2 img:hover {
+  transform: translateY(-5px);
+}
+
 /* ========== Services Section ========== */
 .cards {
-  margin-top: 24px;
+  margin-top: 34px;
 }
 
 .card {
@@ -502,26 +600,7 @@ nav a:hover:after {
   margin-bottom: 10px;
 }
 
-/* ========== Countries Section ========== */
-.flags .flag {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: #fff;
-  box-shadow: var(--shadow);
-  transition: transform .12s ease;
-}
 
-.flags .flag:hover {
-  transform: translateY(-2px);
-}
-
-.flag-icon {
-  font-size: 32px;
-}
 
 /* ========== Process Section ========== */
 .steps {

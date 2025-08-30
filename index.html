@@ -102,6 +102,13 @@
       <div class="media">
         <img src="images/22.jpg" alt="AEC counsellors assisting students" height="500px">
       </div>
+      <div class="media2">
+        <img src="images/22.jpg" alt="AEC counsellors assisting students" height="500px">
+      </div>
+      <div class="media2">
+        <img src="images/22.jpg" alt="AEC counsellors assisting students" height="500px">
+      </div>
+      
     </div>
   </section>
 
@@ -145,34 +152,58 @@
     </div>
   </section>
 
+
   <!-- Countries -->
   <section id="countries" class="section">
     <div class="container">
       <h2 class="h2 center">Study Destinations</h2>
-      <div class="cards grid five flags">
-        <a class="flag" href="#" aria-label="Study in Australia">
+      <div class="cards grid five">
+
+        <!-- Australia -->
+        <a class="flag" href="#" data-image="images/australia.jpg" aria-label="Study in Australia">
           <div class="flag-icon">🇦🇺</div>
           <h3>Australia</h3>
         </a>
-        <a class="flag" href="#" aria-label="Study in United Kingdom">
-          <div class="flag-icon">🇬🇧</div>
-          <h3>UK</h3>
+
+        <!-- UK -->
+        <a class="flag" href="#" data-image="images/uk.jpg" aria-label="Study in United Kingdom">
+          <div class="media2">
+            <img src="images/uk.jpg" alt="Study in UK">
+          </div>
+          <h3>United Kingdom</h3>
         </a>
-        <a class="flag" href="#" aria-label="Study in United States">
-          <div class="flag-icon">🇺🇸</div>
-          <h3>USA</h3>
+
+        <!-- USA -->
+        <a class="flag" href="#" data-image="images/cyprus.jpg" aria-label="Study in United States">
+          <div class="media2">
+            <img src="images/cyprus.jpg" alt="Study in UK">
+          </div>
+          <h3>Cyprus</h3>
         </a>
-        <a class="flag" href="#" aria-label="Study in Canada">
+
+        <!-- Canada -->
+        <a class="flag" href="#" data-image="images/canada.jpg" aria-label="Study in Canada">
           <div class="flag-icon">🇨🇦</div>
           <h3>Canada</h3>
         </a>
-        <a class="flag" href="#" aria-label="Study in Europe">
+
+        <!-- Europe -->
+        <a class="flag" href="#" data-image="images/europe.jpg" aria-label="Study in Europe">
           <div class="flag-icon">🇪🇺</div>
           <h3>Europe</h3>
         </a>
+
       </div>
     </div>
   </section>
+
+<!-- Modal (Hidden by default) -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+
 
   <!-- Process -->
   <section id="process" class="section alt">
@@ -218,6 +249,12 @@
           <figcaption>— Abdullah Khan, Masters in Civil Enineering (UNSW)</figcaption>
         </figure>
         <figure class="slide">
+        <img src="images/Hafsa Aman Saeed.jpg" alt="Student on US campus">
+          <blockquote>“I had no idea where to start, but AEC guided me step-by-step. They helped me choose UWS based on my budget and goals, and even prepared me for the visa interview. It felt like someone always had my back!”</blockquote>
+          <figcaption>— Hafsa Awan, MSc Biotechnology (Edinburg Napier University)</figcaption>
+        </figure>
+
+        <figure class="slide">
           <img src="images/Maryam Nazir-01.jpg" alt="Student holding UK acceptance">
           <blockquote>“The team at AEC was incredibly supportive. They answered every question I had and made sure my application stood out. From IELTS advice to final visa submission, everything was smooth. I highly recommend them to anyone planning to study in the UK!.”</blockquote>
           <figcaption>— Dr. Maryam Nazir, Masters in Public Health (Keele University)</figcaption>
@@ -227,39 +264,40 @@
           <blockquote>“I had no idea where to start, but AEC guided me step-by-step. They helped me choose UWS based on my budget and goals, and even prepared me for the visa interview. It felt like someone always had my back!”</blockquote>
           <figcaption>— Waseem Iqbal, Masters in LLM (University of Hertfordshire)</figcaption>
         </figure>
+        
         <figure class="slide" >
           <img src="images/Behzad Shafiq-01.jpg" alt="Student in UK">
-          <blockquote>“AEC made the whole process so easy. From university selection to visa, they supported me like family. I’m now studying Business Management at the University of Birmingham thanks to them!”</blockquote>
+          <blockquote>“AEC made the whole process so easy. From university selection to visa, they supported me like family. I’m now studying Business Management at the University of Hertfordshire thanks to them!”</blockquote>
           <figcaption>— Behzad Shafiq, MSc in Management Sciences (University of Hertfordshire)</figcaption>
         </figure>
 
         <figure class="slide">
           <img src="images/Muhammad Haseeb Khan-01.jpg" alt="Student in classroom">
-          <blockquote>“I was confused about which country to choose, but AEC helped me shortlist the best options. Today I’m pursuing Computer Science at Cardiff University with full confidence.”</blockquote>
+          <blockquote>“I was confused about which country to choose, but AEC helped me shortlist the best options. Today I’m pursuing  MS in Orthopedics from University of Chester with full confidence.”</blockquote>
           <figcaption>— Haseeb Khan, MS in Orthopedics (University of Chester)</figcaption>
         </figure>
 
         <figure class="slide">
           <img src="images/Muhammad Saqib Zia.jpg" alt="Happy student abroad">
-          <blockquote>“AEC gave me complete guidance on scholarships and applications. I could never have managed without them. Now I’m at University of Glasgow, and it feels like a dream come true!”</blockquote>
+          <blockquote>“AEC gave me complete guidance on scholarships and applications. I could never have managed without them. Now I’m at Ulster University, and it feels like a dream come true!”</blockquote>
           <figcaption>— Saqib Zia, MSc in Construction Management (Ulster University)</figcaption>
         </figure>
 
         <figure class="slide">
           <img src="images/Nabeel Aleem Qureshi-01.jpg" alt="Student at university campus">
-          <blockquote>“From SOP writing to interview prep, AEC was with me at every step. They turned my stress into excitement. Today, I’m studying Mechanical Engineering at Queen Mary University.”</blockquote>
+          <blockquote>“From SOP writing to interview prep, AEC was with me at every step. They turned my stress into excitement. Today, I’m studying MSc Accounting and Finance from University of Northhampton.”</blockquote>
           <figcaption>— Nabeel Aleem, MSc Accounting and Finance (University of Northhampton)</figcaption>
         </figure>
 
         <figure class="slide">
           <img src="images/mehwish-01.jpg" alt="Student studying in library">
-          <blockquote>“AEC is not just a consultancy, they are mentors. They guided me through deadlines and requirements, and now I’m at University of Leeds enjoying every moment.”</blockquote>
+          <blockquote>“AEC is not just a consultancy, they are mentors. They guided me through deadlines and requirements, and now I’m at UNSW enjoying every moment.”</blockquote>
           <figcaption>— Mehwish Muzaffar, MS in Public Health Science (UNSW)</figcaption>
         </figure>
 
         <figure class="slide">
           <img src="images/mudassir-01.jpg" alt="Student on campus lawn">
-          <blockquote>“Applying abroad always felt impossible, but AEC simplified everything. From forms to finances, they took care of it all. Today I’m at University of Exeter doing my MBA.”</blockquote>
+          <blockquote>“Applying abroad always felt impossible, but AEC simplified everything. From forms to finances, they took care of it all. Today I’m at Cardiff Metropoliton University doing my BSc.”</blockquote>
           <figcaption>— Mudassir Murtaza, BSc Computer Sciences (Cardiff Metropoliton University)</figcaption>
         </figure>
 
