@@ -81,22 +81,68 @@ if (nextBtn && prevBtn) {
 }
 
 // Forms: simple UX validation (no backend)
-const contactForm = document.getElementById('contactForm');
-const formStatus = document.getElementById('formStatus');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (!contactForm.checkValidity()){
-      formStatus.textContent = "Please fill all required fields correctly.";
-      formStatus.style.color = '#b91c1c';
-      contactForm.reportValidity();
-      return;
-    }
-    formStatus.textContent = "Thanks! We'll contact you shortly.";
-    formStatus.style.color = '#16a34a';
-    contactForm.reset();
-  });
-}
+
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+
+  // WhatsApp number - replace with your actual business number
+  const whatsappNumber = "923028478487"; // add country code (important!)
+
+  // Your business email
+  const businessEmail = "aec.net.pk@gmail.com";
+
+  function isMobileDevice() {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!contactForm.checkValidity()) {
+        formStatus.textContent = "Please fill all required fields correctly.";
+        formStatus.className = 'error';
+        contactForm.reportValidity();
+        return;
+      }
+
+      // Get form data
+      const formData = new FormData(contactForm);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const phone = formData.get('phone');
+      const destination = formData.get('destination');
+      const message = formData.get('message') || 'No message provided';
+
+      // Format message
+      const formattedMessage = 
+        `New Contact Form Submission:%0A%0A` +
+        `Name: ${name}%0A` +
+        `Email: ${email}%0A` +
+        `Phone: ${phone}%0A` +
+        `Destination: ${destination}%0A` +
+        `Message: ${message}`;
+
+      if (isMobileDevice()) {
+        // WhatsApp URL
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${formattedMessage}`;
+        window.open(whatsappURL, '_blank');
+      } else {
+        // Email URL
+        const subject = encodeURIComponent("New Contact Form Submission");
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nDestination: ${destination}\nMessage: ${message}`
+        );
+        const mailtoURL = `mailto:${businessEmail}?subject=${subject}&body=${body}`;
+        window.location.href = mailtoURL;
+      }
+
+      // Show success message
+      formStatus.textContent = "Thanks! We'll contact you shortly.";
+      formStatus.className = 'success';
+      contactForm.reset();
+    });
+  }
 
 // Newsletter
 const newsForm = document.getElementById('newsletterForm');
